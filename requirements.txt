@@ -1,0 +1,15 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+requests
+pydantic
+httpx
+python-multipart
+openpyxl
+pdfplumber
+beautifulsoup4
+lxml
+sqlalchemy
+alembic
+redis
+celery
