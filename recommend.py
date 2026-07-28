@@ -24,3 +24,5 @@ def recommend(lead: dict, audit: dict) -> list[dict]:
         except Exception:
             pass
     return recs[:5]  # top 5
+def what_zyro_can_do(lead, audit):
+    return recommend(lead, audit)
