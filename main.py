@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 import requests
 
 from audit import audit_website
-from recommend import what_zyro_can_do
+from recommend import recommend
 from sales import sales_pack
 from intelligence import full_intelligence, maturity
 from pagespeed import speed_score
@@ -266,7 +266,7 @@ def process_places(places, business_type, include_competitors, include_speed, db
         lead["is_market_leader"] = 0
 
         sp       = sales_pack(lead)
-        services = what_zyro_can_do(lead)
+        services = recommendlead)
         intel    = full_intelligence(lead, tier)
 
         lead["_sp"] = sp; lead["_services"] = services; lead["_intel"] = intel
@@ -733,7 +733,7 @@ async def upload_leads(file: UploadFile = File(...)):
             lead["priority_score"] = score; lead["tier"] = tier
             lead["is_market_leader"] = 0; lead["competitors"] = []
 
-            sp = sales_pack(lead); services = what_zyro_can_do(lead)
+            sp = sales_pack(lead); services = recommend(lead)
             intel = full_intelligence(lead, tier)
 
             try:
