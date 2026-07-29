@@ -33,6 +33,13 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], all
 # Serve static files
 if os.path.isdir(os.path.join(BASE_DIR, "static")):
     app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
+@app.get("/dashboard.html")
+def serve_dashboard():
+    return FileResponse(os.path.join(BASE_DIR, "dashboard.html"))
+
+@app.get("/")
+def serve_root():
+    return FileResponse(os.path.join(BASE_DIR, "dashboard.html"))
 
 # ─────────────────────── DATABASE ───────────────────────
 
