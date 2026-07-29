@@ -5,3 +5,5 @@ requests
 pydantic
 httpx
 python-multipart
+beautifulsoup4
+lxml
