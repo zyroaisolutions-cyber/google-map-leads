@@ -239,7 +239,10 @@ def process_places(places, business_type, include_competitors, include_speed, db
             "source":   source,
         }
 
-        a = audit_website(lead["website"])
+       try:
+            a = audit_website(lead["website"])
+        except Exception as e:
+            a = {"error": str(e)}
         all_phones = []
         if lead["phone"]: all_phones.append(lead["phone"])
         for ph in (a.get("all_phones") or []):
