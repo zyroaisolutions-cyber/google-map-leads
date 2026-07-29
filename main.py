@@ -24,7 +24,7 @@ from pagespeed import speed_score
 load_dotenv()
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY") or GOOGLE_API_KEY
-DB_PATH        = "zyro.db"
+DB_PATH        = "/tmp/zyro.db"
 BASE_DIR       = os.path.dirname(os.path.abspath(__file__))
 
 app = FastAPI(title="Zyro OS", version="5.0.0")
