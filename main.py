@@ -238,8 +238,7 @@ def process_places(places, business_type, include_competitors, include_speed, db
             "maps_url": p.get("googleMapsUri", ""),
             "source":   source,
         }
-
-       try:
+        try:
             a = audit_website(lead["website"])
         except Exception as e:
             a = {"error": str(e)}
