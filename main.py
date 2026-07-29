@@ -275,7 +275,7 @@ def process_places(places, business_type, include_competitors, include_speed, db
         lead["is_market_leader"] = 0
 
         sp       = sales_pack(lead)
-        services = what_zyro_can_do(lead)
+        services = what_zyro_can_do(lead, a)
         intel    = full_intelligence(lead, tier)
 
         lead["_sp"] = sp; lead["_services"] = services; lead["_intel"] = intel
