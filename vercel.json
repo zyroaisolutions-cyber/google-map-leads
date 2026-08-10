@@ -1,4 +1,12 @@
 {
-  "builds": [{ "src": "main.py", "use": "@vercel/python" }],
+  "builds": [
+    {
+      "src": "main.py",
+      "use": "@vercel/python",
+      "config": {
+        "includeFiles": ["dashboard.html"]
+      }
+    }
+  ],
   "routes": [{ "src": "/(.*)", "dest": "main.py" }]
 }
